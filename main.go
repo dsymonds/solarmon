@@ -62,8 +62,8 @@ func (ec *enphaseCollector) Collect(ch chan<- prometheus.Metric) {
 		ec.up.Set(1)
 		ec.genNow.Set(float64(stats.WattsNow))
 		ec.genToday.Set(float64(stats.WattHoursToday))
-		log.Printf("Currently generating %.2f kW", float64(stats.WattsNow)/1e3)
-		log.Printf("Generated %.1f kWh today", float64(stats.WattHoursToday)/1e3)
+		//log.Printf("Currently generating %.2f kW", float64(stats.WattsNow)/1e3)
+		//log.Printf("Generated %.1f kWh today", float64(stats.WattHoursToday)/1e3)
 	}
 	ch <- ec.up
 	ch <- ec.genNow
