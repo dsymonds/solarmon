@@ -33,6 +33,9 @@ func fetchStats(addr string) (stats, error) {
 	if err != nil {
 		return stats{}, fmt.Errorf("reading Enphase data: %v", err)
 	}
+	if resp.StatusCode != 200 {
+		return stats{}, fmt.Errorf("got non-200 status code %d from Enphase", resp.StatusCode)
+	}
 
 	var st stats
 	if err := json.Unmarshal(raw, &st); err != nil {
