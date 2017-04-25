@@ -26,19 +26,16 @@ func newEnphaseCollector(addr string) *enphaseCollector {
 	ec := &enphaseCollector{
 		addr: addr,
 		up: prometheus.NewGauge(prometheus.GaugeOpts{
-			Namespace: "solar",
-			Name:      "up",
-			Help:      "Whether the Enphase Envoy is responding",
+			Name: "up",
+			Help: "Whether the Enphase Envoy is responding",
 		}),
 		genNow: prometheus.NewGauge(prometheus.GaugeOpts{
-			Namespace: "solar",
-			Name:      "power_production",
-			Help:      "Power being produced, in W",
+			Name: "power_production",
+			Help: "Power being produced, in W",
 		}),
 		genToday: prometheus.NewGauge(prometheus.GaugeOpts{
-			Namespace: "solar",
-			Name:      "energy_today",
-			Help:      "Energy produced today, in Wh",
+			Name: "energy_today",
+			Help: "Energy produced today, in Wh",
 		}),
 	}
 	return ec
