@@ -30,11 +30,11 @@ func newEnphaseCollector(addr string) *enphaseCollector {
 			Help: "Whether the Enphase Envoy is responding",
 		}),
 		genNow: prometheus.NewGauge(prometheus.GaugeOpts{
-			Name: "power_production",
+			Name: "power_production_watts",
 			Help: "Power being produced, in W",
 		}),
 		genToday: prometheus.NewGauge(prometheus.GaugeOpts{
-			Name: "energy_today",
+			Name: "energy_today_watthours",
 			Help: "Energy produced today, in Wh",
 		}),
 	}
