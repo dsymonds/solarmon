@@ -20,7 +20,8 @@ import (
 type stats struct {
 	WattHoursToday int `json:"wattHoursToday"`
 	WattsNow       int `json:"wattsNow"`
-	// TODO: wattHoursSevenDays, wattHoursLifetime
+	// TODO: wattHoursSevenDays
+	WattHoursLifetime int `json:"wattHoursLifetime"`
 }
 
 func fetchStats(addr string) (stats, error) {

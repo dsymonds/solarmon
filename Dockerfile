@@ -14,7 +14,7 @@ RUN go build -o solarmon -v
 
 # -----
 
-FROM alpine:3.18
+FROM alpine:3.18 AS runtime
 
 COPY --from=build /go/src/solarmon/solarmon /
 ENTRYPOINT ["/solarmon"]
