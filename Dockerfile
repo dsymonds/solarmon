@@ -1,12 +1,12 @@
 # Build this with
 #   docker build -t dsymonds/solarmon .
 
-FROM golang:1.23-alpine AS build
+FROM golang:1.24-alpine3.21 AS build
 
 WORKDIR /go/src/solarmon
 COPY go.mod go.sum ./
 RUN go mod download
-RUN go build -v \
+RUN go install -v \
   github.com/prometheus/client_golang/prometheus
 
 COPY . .
